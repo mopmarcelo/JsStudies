@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Aula 20</title>
+    <style>
+        label {
+            width: 100px;
+            display: inline-flex;
+        }
+
+        input {
+            margin: 5px 0 5px 40px;
+        }
+
+        button {
+            color: white;
+            background-color: green;
+            border-color: green;
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="get" id="form1">
+        <label for="nome" class="label">Nome: </label>
+        <input type="text" id="nome">
+        <br />
+        <label for="sobrenome" class="label">Sobrenome: </label>
+        <input type="text" id="sobrenome">
+        <br />
+        <label for="peso" class="label">Peso: </label>
+        <input type="text" id="peso">
+        <br />
+        <label for="altura" class="label">Altura: </label>
+        <input type="text" id="altura">
+        <br />
+        <button>Enviar</button>
+    </form>
+    <div id="resultado"></div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
