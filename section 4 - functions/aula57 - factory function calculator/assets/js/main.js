@@ -3,7 +3,7 @@ function criaCalculadora() {
     return {
         display: document.querySelector('.display'),
         btnClear: document.querySelector('.btn-clear'),
-        arrOperators: ['/', '*', '-', '+', '=', '.'],
+        arrOperators: ['/', '*', '-', '+', '=', '.' ],
 
         inicia() {
             this.cliqueBotoes();
@@ -15,7 +15,7 @@ function criaCalculadora() {
                     return;
                 }
 
-                if (Number.isNaN(e.target.value) && !arrOperators.includes(e.target.value))
+                if (Number.isNaN(e.target.value) && !arrOperators.includes(e.target.value) && e.target.value !== '0')
                     return;
             });
         },
@@ -44,7 +44,7 @@ function criaCalculadora() {
         },
         btnParaDisplay(valor) {
             const lastChar = this.display.value.substring(this.display.value.length - 1);
-            if (Number.isNaN(valor) && valor === lastChar)
+            if (Number.isNaN(valor) && valor === lastChar && valor !== '0')
                 return;
 
             if (this.arrOperators.includes(valor) && this.arrOperators.includes(lastChar)){
@@ -52,7 +52,7 @@ function criaCalculadora() {
                 return;
             }
 
-            if (Number.isNaN(valor) && !arrOperators.includes(valor))
+            if (Number.isNaN(valor) && !arrOperators.includes(valor) && valor !== '0')
                 return;
 
             this.display.value += valor;
@@ -70,7 +70,7 @@ function criaCalculadora() {
                 this.soNumeros();
 
                 conta = eval(conta);
-                if (!conta) {
+                if (!conta && conta !== 0) {
                     alert('Conta inválida.');
                     return;
                 }
@@ -86,6 +86,8 @@ function criaCalculadora() {
                 if (Number(char))
                     continue;
                 else if (arrOperators.includes(char))
+                    continue;
+                else if (char === '0')
                     continue;
                 else
                     throw new TypeError();
