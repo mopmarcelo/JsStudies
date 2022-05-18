@@ -1,0 +1,21 @@
+{
+  "name": "aula3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
+
+//npm install express
+//npm install express@4.x
+//npm install express@4.0.0
+//npm install express -D
+//npm outdated
+//npm update
+//npm uninstall express
