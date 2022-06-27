@@ -15,7 +15,10 @@ exports.home = (req, res) => {
     // req.flash('success', 'congrats');
     //console.log(req.flash('error'), req.flash('info'), req.flash('success'));
     
-    res.render('index');
+    res.render('index', {
+        title: 'Este será o <span style="color:red;">título</span> da página',
+        number: [1,2,3,4,5,6,7,8,9]
+    });
     return;
 }
 

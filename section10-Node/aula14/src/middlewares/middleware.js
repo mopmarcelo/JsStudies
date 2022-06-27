@@ -4,5 +4,7 @@ exports.middlewareGlobal = (req, res, next) => {
         console.log(`Você postou ${req.body.cliente}`);
         console.log();
     }
+    res.locals.umaVariavelLocal = 'Este é o valor da variável do middleware.';
+    
     next();
 }
