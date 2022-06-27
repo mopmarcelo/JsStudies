@@ -9,7 +9,14 @@
 
 
 exports.home = (req, res) => {
+    //req.session.usuario = { nome: 'Marcelo', logado: 'true'};
+    // req.flash('info', 'olá mundo');
+    // req.flash('error', 'oops');
+    // req.flash('success', 'congrats');
+    //console.log(req.flash('error'), req.flash('info'), req.flash('success'));
+    
     res.render('index');
+    return;
 }
 
 exports.trataPost = (req,res) => {
