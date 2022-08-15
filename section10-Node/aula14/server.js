@@ -19,12 +19,14 @@ const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/midd
 const helmet = require('helmet');
 const csrf = require('csurf');
 
+app.use(helmet());
+
 //tratamento para acessar req.body
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use(csrf());
 app.use(express.static(path.resolve(__dirname, 'public')));
-app.use(helmet);
 
 const sessionOption = session({
     secret: 'a1s2d3f4',
